@@ -1,20 +1,11 @@
-require_relative 'employee'
+# frozen_string_literal: true
 
-class Attendant < Employee
-  def discount
-    @discount = set_discount
-  end
+require_relative 'abstract_employee'
 
-  def set_discount
-    discount_value? ? @value : 0
-  end
+class Attendant < AbstractEmployee
+  MAX_DISCOUNT = 0.2
 
-  def discount_value?
-    (0..0.2) === @value
-  end
-
-  def gets_discount
-    puts 'Qual o valor do desconto? 0 até 0.2'
-    @value = gets.strip.to_f
+  def return_max_discount
+    MAX_DISCOUNT
   end
 end

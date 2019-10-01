@@ -1,8 +1,9 @@
-require_relative 'product'
+# frozen_string_literal: true
 
-class Book < Product
-  def grant_discount(discount)
-    p discount
-    puts "o valor final do produto é #{super(discount: discount)}"
+require_relative 'abstract_product'
+
+class Book < AbstractProduct
+  def apply_discount(discount)
+    puts "o valor final do produto é #{super(discount)}"
   end
 end
